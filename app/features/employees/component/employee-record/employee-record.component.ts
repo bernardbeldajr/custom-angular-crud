@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output, EventEmitter } from "@angular/core";
 import { EmployeeService } from "../../employee.service";
 
 @Component({
@@ -7,6 +7,8 @@ import { EmployeeService } from "../../employee.service";
 })
 export class EmployeeRecordComponent implements OnInit {
   @Input() data;
+
+  @Output() searchEmployees: EventEmitter<any> = new EventEmitter();
 
   constructor(private employeeService: EmployeeService) {}
 

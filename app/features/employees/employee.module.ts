@@ -11,6 +11,8 @@ import { EmployeeComponent } from "./container/employee/employee.component";
 import { EmployeeRecordComponent } from "./component/employee-record/employee-record.component";
 import { EmployeeDetail } from "./component/employee-detail/employee-detail.component";
 
+import { SearchEmployeePipe } from "./component/employee-record/employee-record.pipe";
+
 const routes: Routes = [
   {
     path: "employee",
@@ -26,7 +28,12 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [EmployeeComponent, EmployeeRecordComponent, EmployeeDetail],
+  declarations: [
+    EmployeeComponent,
+    EmployeeRecordComponent,
+    EmployeeDetail,
+    SearchEmployeePipe,
+  ],
   providers: [EmployeeService],
 })
 export class EmployeeModule {}

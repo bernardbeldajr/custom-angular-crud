@@ -1,11 +1,12 @@
 <td>{{ detail.id }}</td>
-<td>{{ detail.name }}</td>
-<td>{{ detail.email }}</td>
-<td>{{ detail.phone }}</td>
+<td><span *ngIf="!editing">{{ detail.name }}</span><input type="text" class="form-control" *ngIf="editing" [(ngModel)]="name" [value]="detail.name"></td>
+<td><span *ngIf="!editing">{{ detail.email }}</span><input type="text" class="form-control" *ngIf="editing" [(ngModel)]="email" [value]="detail.email"></td>
+<td><span *ngIf="!editing">{{ detail.phone }}</span><input type="text" class="form-control" *ngIf="editing" [(ngModel)]="phone" [value]="detail.phone"></td>
 <td>{{ detail.address.street }}, {{ detail.address.suite }}, {{ detail.address.city }}, {{ detail.address.zipcode }}</td>
-<td>{{ detail.company.name }}</td>
+<td><span *ngIf="!editing">{{ detail.company.name }}</span><input type="text" class="form-control" *ngIf="editing" [(ngModel)]="company_name" [value]="detail.company.name"></td>
 <td>
-  <a routerLink="/employee/{{ detail.id }}" *ngIf="!editing" class="btn btn-info">View</a>
-  <button class="btn btn-info" *ngIf="!editing" (click)="toggleUpdate($event)">Update</button>
-  <button class="btn btn-success" *ngIf="editing" (click)="onSave($event)">Save</button>
+  <a routerLink="/employee/{{ detail.id }}" *ngIf="!editing" class="btn btn-lg btn-outline-primary"><i class="fa fa-eye"></i></a>
+  <button class="btn btn-lg btn-outline-info" *ngIf="!editing" (click)="toggleUpdate($event)"><i class="fa fa-pencil-ruler"></i></button>
+  <button class="btn btn-lg btn-outline-success" *ngIf="editing" (click)="onSave($event)"><i class="fa fa-save"></i></button>
+  <button class="btn btn-lg btn-outline-danger" *ngIf="!editing" (click)="onDelete($event)"><i class="fa fa-trash"></i></button>
 </td>

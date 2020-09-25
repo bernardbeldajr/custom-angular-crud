@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { Routes, RouterModule } from "@angular/router";
 
@@ -22,6 +23,7 @@ const routes: Routes = [
     BrowserModule,
     CommonModule,
     HttpModule,
+    FormsModule,
     RouterModule.forChild(routes),
   ],
   declarations: [EmployeeComponent, EmployeeRecordComponent, EmployeeDetail],

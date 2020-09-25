@@ -1,0 +1,11 @@
+<td>{{ detail.id }}</td>
+<td>{{ detail.name }}</td>
+<td>{{ detail.email }}</td>
+<td>{{ detail.phone }}</td>
+<td>{{ detail.address.street }}, {{ detail.address.suite }}, {{ detail.address.city }}, {{ detail.address.zipcode }}</td>
+<td>{{ detail.company.name }}</td>
+<td>
+  <a routerLink="/employee/{{ detail.id }}" *ngIf="!editing" class="btn btn-info">View</a>
+  <button class="btn btn-info" *ngIf="!editing" (click)="toggleUpdate($event)">Update</button>
+  <button class="btn btn-success" *ngIf="editing" (click)="onSave($event)">Save</button>
+</td>

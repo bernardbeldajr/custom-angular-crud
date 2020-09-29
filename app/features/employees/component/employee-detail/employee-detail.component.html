@@ -5,8 +5,8 @@
 <td>{{ detail.address.street }}, {{ detail.address.suite }}, {{ detail.address.city }}, {{ detail.address.zipcode }}</td>
 <td><span *ngIf="!editing">{{ detail.company.name }}</span><input type="text" class="form-control" *ngIf="editing" [(ngModel)]="company_name" [value]="detail.company.name"></td>
 <td>
-  <a routerLink="/employee/{{ detail.id }}" *ngIf="!editing" class="btn btn-lg btn-outline-primary"><i class="fa fa-eye"></i></a>
-  <button class="btn btn-lg btn-outline-info" *ngIf="!editing" (click)="toggleUpdate($event)"><i class="fa fa-pencil-ruler"></i></button>
-  <button class="btn btn-lg btn-outline-success" *ngIf="editing" (click)="onSave($event)"><i class="fa fa-save"></i></button>
-  <button class="btn btn-lg btn-outline-danger" *ngIf="!editing" (click)="onDelete($event)"><i class="fa fa-trash"></i></button>
+  <a routerLink="/employee/{{ detail.id }}" *ngIf="!editing" class="btn btn-md btn-outline-primary"><i class="fa fa-eye"></i></a>
+  <button class="btn btn-md btn-outline-info" *ngIf="!editing" (click)="toggleUpdate($event)"><i class="fa fa-pencil-ruler"></i></button>
+  <button class="btn btn-md btn-outline-success" *ngIf="editing" (click)="onSave($event)"><i class="fa fa-save"></i></button>
+  <button class="btn btn-md btn-outline-danger" *ngIf="!editing" (click)="onDelete($event)"><i class="fa fa-trash"></i></button>
 </td>

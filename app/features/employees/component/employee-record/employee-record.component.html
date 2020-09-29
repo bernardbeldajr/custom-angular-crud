@@ -33,6 +33,7 @@
                 [detail]="item"
                 (edit)="handleEdit($event)"
               >
+              <td *ngIf="item == 0">No matches</td>
               </tr>
             </tbody>
           </table>

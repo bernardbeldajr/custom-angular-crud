@@ -1,0 +1,77 @@
+<section class="employee-data-detail mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <form #form="ngForm" autocomplete="off" novalidate>
+          <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="showMsg">
+            <strong>Success!</strong> Employee is being updated.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="toggleMessage($event)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title m-0">Employee ID #{{ detail?.id }}</h3>
+              <input type="hidden" name="id" required [ngModel]="detail?.id" class="form-control" #id="ngModel">
+            </div>
+            <div class="card-body">
+              <!-- Name Field -->
+              <div class="form-group">
+                <div class="row w-100 d-flex no-gutters" *ngIf="!editing">
+                  <div class="col-md-1">
+                    <p class="mt-1">Name: </p>
+                  </div>
+                  <div class="col-md-11">
+                    <p class="form-control">{{ detail?.name }}</p>
+                  </div>
+                </div>
+                <div class="row w-100 d-flex no-gutters" *ngIf="editing">
+                  <div class="col-md-1">
+                    <label for="name" class="mt-1">Name: </label>
+                  </div>
+                  <div class="col-md-11">
+                    <input type="text" name="name" required [ngModel]="detail?.name" class="form-control" #name="ngModel">
+                    <div class="text-danger mt-1" role="alert" *ngIf="name.errors?.required && name.dirty">
+                      <h6>Employee name is required</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Name Field -->
+              <!-- Email Field -->
+              <div class="form-group">
+                <div class="row w-100 d-flex no-gutters" *ngIf="!editing">
+                  <div class="col-md-1">
+                    <p class="mt-1">Email: </p>
+                  </div>
+                  <div class="col-md-11">
+                    <p class="form-control">{{ detail?.email }}</p>
+                  </div>
+                </div>
+                <div class="row w-100 d-flex no-gutters" *ngIf="editing">
+                  <div class="col-md-1">
+                    <label for="email" class="mt-1">Email: </label>
+                  </div>
+                  <div class="col-md-11">
+                    <input type="text" name="email" required [ngModel]="detail?.email" class="form-control" #email="ngModel">
+                    <div class="text-danger mt-1" role="alert" *ngIf="email.errors?.required && email.dirty">
+                      <h6>Employee email is required</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Email Field -->
+            </div>
+            <div class="card-footer">
+              <div class="form-group m-0 d-flex justify-content-end">
+                <button *ngIf="editing" type="button" class="btn btn-success mr-2" (click)="onSave(form.value, form.valid)" [disabled]="form.invalid">Submit</button>
+                <button *ngIf="!editing" type="button" class="btn btn-info" (click)="toggleUpdate($event)">Update</button>
+                <button *ngIf="editing" type="button" class="btn btn-danger" (click)="toggleUpdate($event)">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

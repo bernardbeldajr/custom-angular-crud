@@ -15,6 +15,12 @@ export class EmployeeService {
       .map((response: Response) => response.json());
   }
 
+  getEmployee(id): Observable<any> {
+    return this.http
+      .get(`${EMPLOYEE_API}/${id}`)
+      .map((response: Response) => response.json());
+  }
+
   updateEmployee(employee): Observable<any> {
     return this.http
       .put(`${EMPLOYEE_API}/${employee.id}`, employee)

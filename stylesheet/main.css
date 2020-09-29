@@ -10551,6 +10551,16 @@ body {
   color: #222;
   font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
+  margin: 0; }
+
 /**
  * Hide text while making it readable for screen readers
  * 1. Needed in WebKit-based browsers because of an implementation bug;
@@ -10577,6 +10587,9 @@ body {
   padding: 0;
   position: absolute;
   width: 1px; }
+
+label {
+  margin: 0; }
 
 .companies {
   padding: 45px 0; }

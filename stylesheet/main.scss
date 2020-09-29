@@ -25,9 +25,11 @@
 
 // 5. Components
 @import
-  'components/buttons';
+  'components/buttons',
+  'components/forms';
 
 // 6. Section-specific styles
 @import
-  'sections/companies';
+  'sections/companies',
+  'sections/employee-data-detail';
 

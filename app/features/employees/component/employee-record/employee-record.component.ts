@@ -25,4 +25,11 @@ export class EmployeeRecordComponent implements OnInit {
       });
     });
   }
+  handleDelete(event) {
+    this.employeeService.deleteEmployee(event).subscribe((data) => {
+      this.data = this.data.filter((employee) => {
+        return employee.id !== event.id;
+      });
+    });
+  }
 }

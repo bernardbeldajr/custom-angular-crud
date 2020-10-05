@@ -2,6 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <a routerLink="../" class="text-primary mb-2 d-block"><i class="fa fa-arrow-left"></i> Back to Employees</a>
+      </div>
+      <div class="col-md-12">
         <form #form="ngForm" autocomplete="off" novalidate>
           <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="showMsg">
             <strong>Success!</strong> Employee is being updated.
@@ -15,21 +18,30 @@
               <input type="hidden" name="id" required [ngModel]="detail?.id" class="form-control" #id="ngModel">
             </div>
             <div class="card-body">
+               <!-- Basic Heading -->
+               <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="text-primary text-center">Basic Information</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- End Basic Heading -->
               <!-- Name Field -->
               <div class="form-group">
                 <div class="row w-100 d-flex no-gutters" *ngIf="!editing">
-                  <div class="col-md-1">
+                  <div class="col-md-2">
                     <p class="mt-1">Name: </p>
                   </div>
-                  <div class="col-md-11">
+                  <div class="col-md-10">
                     <p class="form-control">{{ detail?.name }}</p>
                   </div>
                 </div>
                 <div class="row w-100 d-flex no-gutters" *ngIf="editing">
-                  <div class="col-md-1">
+                  <div class="col-md-2">
                     <label for="name" class="mt-1">Name: </label>
                   </div>
-                  <div class="col-md-11">
+                  <div class="col-md-10">
                     <input type="text" name="name" required [ngModel]="detail?.name" class="form-control" #name="ngModel">
                     <div class="text-danger mt-1" role="alert" *ngIf="name.errors?.required && name.dirty">
                       <h6>Employee name is required</h6>
@@ -41,21 +53,77 @@
               <!-- Email Field -->
               <div class="form-group">
                 <div class="row w-100 d-flex no-gutters" *ngIf="!editing">
-                  <div class="col-md-1">
+                  <div class="col-md-2">
                     <p class="mt-1">Email: </p>
                   </div>
-                  <div class="col-md-11">
+                  <div class="col-md-10">
                     <p class="form-control">{{ detail?.email }}</p>
                   </div>
                 </div>
                 <div class="row w-100 d-flex no-gutters" *ngIf="editing">
-                  <div class="col-md-1">
+                  <div class="col-md-2">
                     <label for="email" class="mt-1">Email: </label>
                   </div>
-                  <div class="col-md-11">
+                  <div class="col-md-10">
                     <input type="text" name="email" required [ngModel]="detail?.email" class="form-control" #email="ngModel">
                     <div class="text-danger mt-1" role="alert" *ngIf="email.errors?.required && email.dirty">
                       <h6>Employee email is required</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Email Field -->
+              <!-- Phone Field -->
+               <div class="form-group">
+                <div class="row w-100 d-flex no-gutters" *ngIf="!editing">
+                  <div class="col-md-2">
+                    <p class="mt-1">Phone Number: </p>
+                  </div>
+                  <div class="col-md-10">
+                    <p class="form-control">{{ detail?.phone }}</p>
+                  </div>
+                </div>
+                <div class="row w-100 d-flex no-gutters" *ngIf="editing">
+                  <div class="col-md-2">
+                    <label for="phone" class="mt-1">Phone Number: </label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="phone" required [ngModel]="detail?.phone" class="form-control" #phone="ngModel">
+                    <div class="text-danger mt-1" role="alert" *ngIf="phone.errors?.required && phone.dirty">
+                      <h6>Employee phone is required</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Phone Field -->
+              <hr>
+              <!-- Address Heading -->
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="text-primary text-center">Address Information</h4>
+                  </div>
+                </div>
+              </div>
+              <!-- End Address Heading -->
+              <!-- Street Field -->
+              <div class="form-group">
+                <div class="row w-100 d-flex no-gutters" *ngIf="!editing">
+                  <div class="col-md-2">
+                    <p class="mt-1">Street: </p>
+                  </div>
+                  <div class="col-md-10">
+                    <p class="form-control">{{ detail?.address.street }}</p>
+                  </div>
+                </div>
+                <div class="row w-100 d-flex no-gutters" *ngIf="editing">
+                  <div class="col-md-2">
+                    <label for="street" class="mt-1">Street: </label>
+                  </div>
+                  <div class="col-md-10">
+                    <input type="text" name="street" required [ngModel]="detail?.address.street" class="form-control" #street_a="ngModel">
+                    <div class="text-danger mt-1" role="alert" *ngIf="street_a.errors?.required && street_a.dirty">
+                      <h6>Employee address street is required</h6>
                     </div>
                   </div>
                 </div>

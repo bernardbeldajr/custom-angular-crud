@@ -26,4 +26,10 @@ export class EmployeeService {
       .put(`${EMPLOYEE_API}/${employee.id}`, employee)
       .map((response: Response) => response.json());
   }
+
+  deleteEmployee(employee): Observable<any> {
+    return this.http
+      .delete(`${EMPLOYEE_API}/${employee.id}`)
+      .map((response: Response) => response.json());
+  }
 }

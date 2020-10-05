@@ -27,9 +27,10 @@ export class SingleEmployeeComponent implements OnInit {
   }
 
   handleUpdate(event) {
+    console.log(event);
     this.employeeService.updateEmployee(event).subscribe((data) => {
-      this.employees = data;
       // console.log(data);
+      return (this.employees = data);
     });
   }
 }

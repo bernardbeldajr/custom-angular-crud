@@ -13,6 +13,8 @@ export class DataEmployeeComponent {
   editing: boolean = false;
   showMsg: boolean = false;
 
+  street: string = "";
+
   toggleUpdate() {
     this.editing = !this.editing;
   }
@@ -23,6 +25,8 @@ export class DataEmployeeComponent {
 
   onSave(employee, IsValid) {
     if (IsValid) {
+      employee.address = { street: employee.street };
+      console.log(employee);
       this.update.emit(employee);
       this.toggleUpdate();
       this.showMsg = true;
